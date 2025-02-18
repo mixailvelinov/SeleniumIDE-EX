@@ -9,7 +9,7 @@ pipeline{
         }
 
         stage("Set up .NET Core"){
-            step
+            steps{
                 echo "Setting up .NET Core..."
                 bat "choco install dotnet-sdk -y version=6.0.100"
             }
@@ -35,4 +35,5 @@ pipeline{
                 bat "dotnet test"
             }
         }
+  }
 }
